@@ -9,14 +9,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  linux:
-    uses: ./.github/workflows/linux-build.yml
-
-  macos:
-    uses: ./.github/workflows/macos-build.yml
-    with:
-      build_variant: '-universal'
-      rime_plugins: hchunhui/librime-lua lotem/librime-octagram rime/librime-predict
 
   windows:
     uses: ./.github/workflows/windows-build.yml
@@ -24,7 +16,7 @@ jobs:
       rime_plugins: hchunhui/librime-lua lotem/librime-octagram rime/librime-predict
 
   release:
-    needs: [macos, windows]
+    needs: [windows]
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts
