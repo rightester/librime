@@ -9,6 +9,7 @@ on:
       rime_plugins:
         required: false
         type: string
+  workflow_dispatch:
 jobs:
   build:
     runs-on: windows-latest
