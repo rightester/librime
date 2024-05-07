@@ -40,6 +40,8 @@ target_link_libraries(rime_patch
 install(TARGETS rime_deployer DESTINATION ${BIN_INSTALL_DIR})
 install(TARGETS rime_dict_manager DESTINATION ${BIN_INSTALL_DIR})
 install(TARGETS rime_patch DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS rime_api_console DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS rime_console DESTINATION ${BIN_INSTALL_DIR})
 
 # do not work with Windows DLL; interfaces to dict are missing DLL export.
 if(NOT WIN32 OR NOT BUILD_SHARED_LIBS)
